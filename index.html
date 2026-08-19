@@ -21,6 +21,9 @@
   <div id="hearts"></div>
 
   <button id="musicBtn" class="music-btn" aria-label="Toggle music">♫</button>
+  <audio id="bgMusic" loop>
+  <source src="Perfect Perfect Ed Sheeran, Perfect song lyrics, Ed Sheeran slow version, romantic English songs.mp3" type="audio/mpeg">
+</audio>
 
   <main>
     <section class="hero">
@@ -258,5 +261,19 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
+
+musicBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+        bgMusic.play();
+        musicBtn.textContent = "⏸";
+    } else {
+        bgMusic.pause();
+        musicBtn.textContent = "♫";
+    }
+});
+</script>
 </body>
 </html>
